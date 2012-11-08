@@ -1,0 +1,307 @@
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,portuguese]{babel}
+\usepackage{chngcntr}
+\usepackage{acronym}
+\usepackage{color}
+\usepackage{url}
+\usepackage{float}
+\usepackage{palatino}
+\usepackage[cjkjis]{ucs}
+\usepackage[noprefix]{nomencl}
+\usepackage[perpage]{footmisc}
+\usepackage[round, sort, numbers, authoryear]{natbib}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{eurosym}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathtext}
+\usepackage{gloss}
+\usepackage{eucal}
+\usepackage{ifthen}
+\usepackage{endnotes}
+\usepackage{xspace} 
+\usepackage{setspace}
+\usepackage{fancyvrb}
+\usepackage{listings}
+\usepackage{textcomp}
+\usepackage{fancyhdr}
+\usepackage{xargs}
+\usepackage{tikz}
+\usepackage{geometry}
+\usepackage{helvet}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{rotating}
+\usepackage{array}
+\usepackage{supertabular}
+\usepackage[plainpages = false, pdfpagelabels, pdfpagelayout = useoutlines, bookmarks, bookmarksopen = true, bookmarksnumbered = true, breaklinks = true, linktocpage, colorlinks = true, linkcolor = black, urlcolor = black, citecolor = black, anchorcolor = black, hyperindex = true, hyperfigures]{hyperref}
+
+\usetikzlibrary{shapes,arrows}
+
+\def\color@hbox{}
+\def\color@endbox{}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\geometry{left=2.5cm,right=2.5cm,top=2cm,bottom=2.5cm}
+
+\setlength{\oddsidemargin}{1.46cm}
+\setlength{\evensidemargin}{-0.54cm}
+\setlength{\marginparsep}{0.0cm}
+\setlength{\marginparwidth}{0.0cm}
+\setlength{\textwidth}{14.9cm}
+\setlength{\topmargin}{-0.54cm}
+\setlength{\headheight}{0.5cm}
+\setlength{\headsep}{1.0cm}
+\setlength{\footskip}{1.5cm}
+\setlength{\textheight}{22.6cm} 
+\parindent 0pt
+\parskip 5pt
+
+\let\origdoublepage\cleardoublepage
+\renewcommand{\cleardoublepage}{
+  \clearpage
+  {\pagestyle{empty}\origdoublepage}
+}
+
+\newif\if@covfig \@covfigfalse
+\newif\if@coadv  \@coadvfalse
+\newif\if@juriA  \@juriAfalse
+\newif\if@juriB  \@juriBfalse
+\newif\if@juriC  \@juriCfalse
+\newif\if@juriD  \@juriDfalse
+\newif\if@juriE  \@juriEfalse
+\newif\if@juriF  \@juriFfalse
+\newif\if@juriG  \@juriGfalse
+
+\newcommandx{\thjuri}[7][1=,2=,3=,4=,5=,6=,7=]{
+\if #1 \@empty \else \newcommand{\@thjuriA}{#1} \@juriAtrue \fi
+\if #2 \@empty \else \newcommand{\@thjuriB}{#2} \@juriBtrue \fi
+\if #3 \@empty \else \newcommand{\@thjuriC}{#3} \@juriCtrue \fi
+\if #4 \@empty \else \newcommand{\@thjuriD}{#4} \@juriDtrue \fi
+\if #5 \@empty \else \newcommand{\@thjuriE}{#5} \@juriEtrue \fi
+\if #6 \@empty \else \newcommand{\@thjuriF}{#6} \@juriFtrue \fi
+\if #7 \@empty \else \newcommand{\@thjuriG}{#7} \@juriGtrue \fi
+}
+
+\newcommandx{\keywords}[8][1=,2=,3=,4=,5=,6=,7=,8=]{
+{ \vspace{0.1cm} \bfseries Keywords: }
+{
+\@ifempty{#1}{}{#1}
+\@ifempty{#2}{}{, #2}
+\@ifempty{#3}{}{, #3}
+\@ifempty{#4}{}{, #4}
+\@ifempty{#5}{}{, #5}
+\@ifempty{#6}{}{, #6}
+\@ifempty{#7}{}{, #7}
+\@ifempty{#8}{}{, #8}
+}
+}
+
+\newcommand{\thesisadvisor}[2]{
+  \newcommand{\@thadvsex}{#2}
+  \ifthenelse{\equal{#2}{2}} {
+      \newcommand{\@thadv}{Prof.$^{\underline{a}}$ Doutora #1}
+      \newcommand{\@theadvisetxt}{Orientadora}
+    } {
+      \newcommand{\@thadv}{Prof. Doutor #1}
+      \newcommand{\@theadvisetxt}{Orientador}
+    }
+}
+
+\newcommand{\thesiscoadvisor}[2]{
+  \newcommand{\@thcoadvsex}{#2}
+  \ifthenelse{\equal{#2}{2}} {
+      \newcommand{\@thcoadv}{Prof.$^{\underline{a}}$ Doutora #1}
+      \newcommand{\@thecoadvisetxt}{Co-orientadora}
+    } {
+      \newcommand{\@thcoadv}{Prof. Doutor #1}
+      \newcommand{\@thecoadvisetxt}{Co-orientador}
+    }
+  \@coadvtrue
+}
+
+\newcommand{\currentdegree}[1]{\newcommand{\@thcurrentdegree}{#1}}
+
+\newcommand{\thesisdepartment}[1]{\newcommand{\@thdept}{#1}}
+
+\newcommand{\thesisdegree}[1]{\newcommand{\@thdegree}{#1}}
+
+\newcommand{\thesiscourse}[1]{\newcommand{\@thcourse}{#1}}
+
+\newcommand{\coverfigure}[1]{\newcommand{\@cfig}{#1}\@covfigtrue}
+
+
+
+\def\cl@chapter{\@elt{section}\@elt{footnote}}
+
+\def\thefigure{\thechapter.\@arabic\c@figure}
+\def\thetable{\thechapter.\@arabic\c@table}
+\def\theequation{\thechapter.\arabic{equation}}
+
+\def\dept#1{\gdef\@dept{#1}}
+\def\submitdate#1{\gdef\@submitdate{#1}}
+\def\copyrightyear#1{\gdef\@copyrightyear{#1}}
+\def\@dept{\@thdept}
+\def\@submitdate{\ifcase\the\month\or
+  Janeiro\or Fevereiro\or Março\or Abril\or Maio\or Junho\or
+  Julho\or Agosto\or Setembro\or Outubro\or Novembro\or Dezembro\fi
+  \space \number\the\year}
+\ifnum\month=12
+    \@tempcnta=\year \advance\@tempcnta by 1
+    \edef\@copyrightyear{\number\the\@tempcnta}
+\else
+    \def\@copyrightyear{\number\the\year}
+\fi
+\newif\ifcopyright \newif\iffigurespage \newif\iftablespage
+\copyrighttrue \figurespagetrue \tablespagetrue
+\def\titlep{
+\thispagestyle{empty}
+\vbox to \textheight {%
+\begin{center}
+\def\baselinestretch{1}
+\ifx\undefined\selectfont 
+\ifx\@currsize\normalsize\@normalsize\else\@currsize\fi
+\else 
+\@newbaseline
+\fi
+\renewcommand{\left}{1cm}
+\begin{flushleft}\includegraphics[width=9cm, height=2.3cm]{images/LogoIST-new.png}\end{flushleft}
+\if@covfig \centerline{\includegraphics{\@cfig}} \fi
+\vspace{4cm}
+\begin{center}\fontsize{16}{16}\selectfont\textbf{\@title}\end{center}
+\vspace{1.5cm}
+\begin{center}\Large\textbf{\@author}\\\small(\@thcurrentdegree)\@\end{center}
+\vspace{1.5cm}
+\begin{center}\Large Dissertação para obtenção do grau:\end{center}
+\begin{center}\fontsize{16}{16}\selectfont\textbf{\@thdegree~em~\@thcourse}\end{center}
+\vspace{1.5cm}
+\begin{center}\Large\textbf{Comité de Avaliação}\end{center}
+\begin{flushleft}
+\large
+\begin{tabular}{l l}
+Presidente:  & \if@juriA \@thjuriA\fi \\
+\@theadvisetxt: & \@thadv\\
+\if@coadv
+\@thecoadvisetxt: & \@thcoadv\\
+\fi
+Vogais: & \if@juriB \@thjuriB \fi\\
+\if@juriC & \@thjuriC\\ \fi
+\if@juriD & \@thjuriD\\ \fi
+\if@juriE & \@thjuriE\\ \fi
+\if@juriF & \@thjuriF\\ \fi
+\if@juriG & \@thjuriF\\ \fi
+\end{tabular}
+\end{flushleft}
+\begin{center}\Large\textbf{\@submitdate}\end{center}
+\end{center}
+}}
+
+\ifx\undefined\selectfont
+\def\@setsize#1#2#3#4{\@nomath#1
+   \let\@currsize#1\baselineskip
+   #2\baselineskip\baselinestretch\baselineskip
+   \parskip\baselinestretch\parskip
+   \setbox\strutbox\hbox{\vrule height.7\baselineskip
+      depth.3\baselineskip width\z@}
+   \normalbaselineskip\baselineskip#3#4}
+\else
+\def\@newbaseline{%
+    \ifx\undefined\setnew@baselineskip
+      \baselineskip\f@baselineskip\relax%
+    \else
+      \setnew@baselineskip%
+    \fi
+    \baselineskip\baselinestretch\baselineskip
+    \setbox\strutbox\hbox{\vrule\@height.7\baselineskip
+    \@depth.3\baselineskip \@width\z@}
+    \normalbaselineskip\baselineskip}
+\fi
+
+\def\PARstart#1#2{\begingroup\def\par{\endgraf\endgroup\lineskiplimit=0pt}
+    \setbox2=\hbox{\lowercase{#2} }\newdimen\tmpht \tmpht \ht2
+    \advance\tmpht by \baselineskip\font\hhuge=cmr10 at \tmpht
+    \setbox1=\hbox{{\hhuge #1}}
+    \count7=\tmpht \count8=\ht1\divide\count8 by 1000 \divide\count7 by\count8
+    \tmpht=.001\tmpht\multiply\tmpht by \count7\font\hhuge=cmr10 at \tmpht
+    \setbox1=\hbox{{\hhuge #1}} \noindent \hangindent1.05\wd1
+    \hangafter=-2 {\hskip-\hangindent \lower1\ht1\hbox{\raise1.0\ht2\copy1}%
+    \kern-0\wd1}\copy2\lineskiplimit=-1000pt}
+
+\def\@xfloat#1[#2]{\ifhmode \@bsphack\@floatpenalty -\@Mii\else
+   \@floatpenalty-\@Miii\fi\def\@captype{#1}\ifinner
+      \@parmoderr\@floatpenalty\z@
+    \else\@next\@currbox\@freelist{\@tempcnta\csname ftype@#1\endcsname
+       \multiply\@tempcnta\@xxxii\advance\@tempcnta\sixt@@n
+       \@tfor \@tempa :=#2\do
+                        {\if\@tempa h\advance\@tempcnta \@ne\fi
+                         \if\@tempa t\advance\@tempcnta \tw@\fi
+                         \if\@tempa b\advance\@tempcnta 4\relax\fi
+                         \if\@tempa p\advance\@tempcnta 8\relax\fi
+         }\global\count\@currbox\@tempcnta}\@fltovf\fi
+    \global\setbox\@currbox\vbox\bgroup 
+    \def\baselinestretch{1}\@normalsize
+    \boxmaxdepth\z@
+    \hsize\columnwidth \@parboxrestore}
+
+\long\def\@footnotetext#1{\insert\footins{\def\baselinestretch{1}\footnotesize
+    \interlinepenalty\interfootnotelinepenalty 
+    \splittopskip\footnotesep
+    \splitmaxdepth \dp\strutbox \floatingpenalty \@MM
+    \hsize\columnwidth \@parboxrestore
+   \edef\@currentlabel{\csname p@footnote\endcsname\@thefnmark}\@makefntext
+    {\rule{\z@}{\footnotesep}\ignorespaces
+      #1\strut}}}
+
+\brokenpenalty=10000
+\renewcommand{\baselinestretch}{1.5}
+
+\def\beforepreface{
+	\pagestyle{empty}
+	\titlep
+    	\cleardoublepage
+	\pagenumbering{roman}
+    	\pagestyle{plain}}
+
+\def\prefacesection#1{
+	\cleardoublepage
+	\chapter*{#1}
+	\addcontentsline{toc}{chapter}{#1}}
+
+\def\afterpreface{
+    	\pagestyle{plain}
+	\tableofcontents
+	\iftablespage
+		{\addvspace{10pt}
+		\let\saveaddvspace=\addvspace
+		\def\addvspace##1{}
+		\cleardoublepage
+		\listoftables
+		\let\addvspace=\saveaddvspace}
+	\fi
+	\iffigurespage
+		{\addvspace{10pt}
+		\let\saveaddvspace=\addvspace
+		\def\addvspace##1{}
+		\cleardoublepage
+		\listoffigures
+		\let\addvspace=\saveaddvspace}
+	\fi
+	\cleardoublepage
+	\input{acronyms}
+	\cleardoublepage
+	\pagenumbering{arabic}
+	\pagestyle{headings}}
+
+\pagestyle{headings}
+\makeatother
+
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{2}
+\def\subsubsubsection#1{\paragraph{#1}~\\}

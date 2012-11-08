@@ -1,0 +1,61 @@
+\documentclass[10pt,pdftex,twoside,onecolumn,a4paper,openright]{book}
+
+\usepackage{istthesis}
+
+\newcommand{\degree}{\ensuremath{^\circ}} % degree symbol
+
+\title{GBUS - Route GeoTracer}
+\author{Marta Pereira dos Santos}
+\submitdate{Julho 2012}
+\copyrightyear{2012}
+\thesisadvisor{Ricardo Lopes Pereira}{1}
+\currentdegree{Licenciado em Engenharia Informática e de Computadores}
+\thesisdepartment{Departamento de Engenharia Informática}
+\thesiscourse{Engenharia Informática e de Computadores}
+\thesisdegree{Mestre}
+\thjuri[Prof. Doutor Nome do Presidente do Júri][Prof. Doutor Nome do Vogal 1]
+
+\begin{document}
+
+\selectlanguage{english}
+
+\beforepreface
+\input{abstract.tex}
+\cleardoublepage
+\input{resumo.tex}
+\cleardoublepage
+\input{acknowledgements.tex}
+\cleardoublepage
+
+\afterpreface
+
+\input{introduction}
+\cleardoublepage
+
+\input{relatedwork}
+\cleardoublepage
+
+\input{architecture}
+\cleardoublepage
+
+\input{implementation}
+\cleardoublepage
+
+\input{evaluation}
+\cleardoublepage
+
+\input{conclusion}
+\cleardoublepage
+
+
+\bibliographystyle{jmb}
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliography{bibliography}
+
+\addcontentsline{toc}{chapter}{Appendix}
+\appendix
+\input{appendix_mobileapp}
+\input{appendix_monitoringapp}
+\input{appendix_gpx}
+
+\end{document}
