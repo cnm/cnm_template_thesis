@@ -31,6 +31,8 @@ Structure
 Recommended latex packages
 --------------------------
 
-texlive-latex-extra
-texlive-latex-science
+::
+
+    texlive-latex-extra
+    texlive-latex-science
 
