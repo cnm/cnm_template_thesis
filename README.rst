@@ -3,7 +3,9 @@ Template for the thesis
 
 Structure
 ---------
+
 ::
+
     .
     ├── abstract.tex                -
     ├── acknowledgements.tex        -
