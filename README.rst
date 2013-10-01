@@ -35,4 +35,4 @@ Recommended latex packages
 
     texlive-latex-extra
     texlive-latex-science
-
+    texlive-lang-portuguese
