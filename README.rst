@@ -36,3 +36,8 @@ Recommended latex packages
     texlive-latex-extra
     texlive-latex-science
     texlive-lang-portuguese
+
+Rules for the template
+----------------------
+
+http://da.ist.utl.pt/dissertacao-de-mestrado/
