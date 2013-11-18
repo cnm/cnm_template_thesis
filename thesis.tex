@@ -1,67 +1,97 @@
-\documentclass[10pt,pdftex,oneside,onecolumn,a4paper,openright]{book}
-\usepackage{setspace}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     This file should not be altered                                  %
+%     To see what other .tex files search for TODO word                %
+%     If more chapters are required, add more \inputs{file} commands   %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[10pt,a4paper,twoside]{report}
 
-\usepackage{istthesis}
-
-\newcommand{\degree}{\ensuremath{^\circ}} % degree symbol
-
-\title{My dear project}
-\author{Manel Esteves dos Santos Pereira}
-\submitdate{Julho 1900}
-\copyrightyear{1900}
-\thesisadvisor{Nome do coordenador}{1}
-%\thesisadvisor{Ricardo Lopes Pereira}{1}
-%\thesisadvisor{Teresa Vazão}{1}
-%\thesisadvisor{António Varela}{1}
-\currentdegree{Licenciado em Engenharia Informática e de Computadores}
-\thesisdepartment{Departamento de Engenharia Informática}
-\thesiscourse{Engenharia Informática e de Computadores}
-\thesisdegree{Mestre}
-\thjuri[Prof. Doutor Nome do Presidente do Júri][Prof. Doutor Nome do Vogal 1]
+% TODO - change this with your external packages (if required)
+\input{preamble}
 
 \begin{document}
-\onehalfspacing
 
+% Set plain page style (no headers, footer with centered page number)
+\pagestyle{plain}
 
-\selectlanguage{english}
+% Set roman numbering (i,ii,...) before the start of chapters
+\pagenumbering{roman}
 
-\beforepreface
-\input{abstract.tex}
+% TODO Define your cover page
+\input{frontCover}
+
+% TODO Dedication page (optional, and not normal)
+% \input{Thesis_Dedication} % Uncomment if it is used
+
+% TODO Acknowledgments (optional and can be in native language)
+\input{acknowledgements}
+
+% TODO Abstract in English and Portuguese
+\input{resumo}
+\input{abstract}
+
+% ----------------------------------------------------------------------
+%  Table of contents, list of tables, list of figures and nomenclature
+%  (DO NOT TOUCH THIS!!!)
+% ----------------------------------------------------------------------
+
+% Table of contents
+\tableofcontents
 \cleardoublepage
-\input{resumo.tex}
-\cleardoublepage
-\input{acknowledgements.tex}
+
+% List of tables
+\listoftables
+\addcontentsline{toc}{section}{\listtablename}
 \cleardoublepage
 
-\afterpreface
-
-\input{introduction}
+% List of figures
+\listoffigures
+\addcontentsline{toc}{section}{\listfigurename}
 \cleardoublepage
+
+\section*{}
+\addcontentsline{toc}{section}{Acronyms}
+\input{acronyms}
+\cleardoublepage
+
+% Set arabic numbering (1,2,...) after preface
+\setcounter{page}{1}
+\pagenumbering{arabic}
+
+% ----------------------------------------------------------------------
+%  TODO - Edit each chapters file and create new if necessary
+% ----------------------------------------------------------------------
+
+\input{introduction} % file "Thesis_Introduction.tex"
 
 \input{relatedwork}
-\cleardoublepage
-
 \input{architecture}
-\cleardoublepage
-
 \input{implementation}
-\cleardoublepage
-
 \input{evaluation}
-\cleardoublepage
 
-\input{conclusion}
-\cleardoublepage
+%\input{new_file} % add new .tex files for new chapters
 
+\input{conclusions} % file "Thesis_Conclusions.tex"
 
-%\bibliographystyle{jmb}   % For references with authors name Joao et al (1984)
-\bibliographystyle{splncs} % For references with number [1]
-
-\addcontentsline{toc}{chapter}{Bibliography}
-\bibliography{bibliography}
-
-\addcontentsline{toc}{chapter}{Appendix}
+% ----------------------------------------------------------------------
+%  TODO - Appendix (optional)
+% ----------------------------------------------------------------------
 \appendix
-\input{appendix}
+\input{appendix} % file "Thesis_Appendix.tex"
+
+% ----------------------------------------------------------------------
+%  Bibliography
+% ----------------------------------------------------------------------
+
+
+% External bibliography database file in the BibTeX format
+\cleardoublepage
+
+\bibliographystyle{jmb}
+% TODO - This file "references.bib" should include all your bibtex
+\bibliography{references} 
+
+% Add entry in the table of contents as chapter
+\addcontentsline{toc}{chapter}{\bibname}
+\cleardoublepage
 
 \end{document}

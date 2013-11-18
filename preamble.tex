@@ -1,0 +1,181 @@
+% ----------------------------------------------------------------------
+% Define document language.
+% ----------------------------------------------------------------------
+% Select one
+%\usepackage[latin1]{inputenc} % <<<<< Windows
+\usepackage[utf8]{inputenc}   % <<<<< Linux
+
+% Select one
+%\usepackage[portuguese]{babel} % <<<<< Portuguese
+\usepackage[english]{babel} % <<<<< English
+
+% List of LaTeX variable names: \abstractname, \appendixname, \bibname,
+%   \chaptername, \contentsname, \listfigurename, \listtablename, ...)
+% http://www.tex.ac.uk/cgi-bin/texfaq2html?label=fixnam
+%
+% Changing the words babel uses (uncomment and redefine as necessary...)
+\newcommand{\acknowledgments}{@undefined} % new LaTeX variable name
+%
+% > English
+%
+\addto\captionsenglish{\renewcommand{\acknowledgments}{Acknowledgments}}
+%\addto\captionsenglish{\renewcommand{\listtablename}{List of Tables}}
+%\addto\captionsenglish{\renewcommand{\listfigurename}{List of Figures}}
+%\addto\captionsenglish{\renewcommand{\nomname}{Nomenclature}}
+%\addto\captionsenglish{\renewcommand{\appendixname}{Appendix}}
+%\addto\captionsenglish{\renewcommand{\bibname}{References}} % Bibliography
+
+% > Portuguese
+%
+\addto\captionsportuguese{\renewcommand{\acknowledgments}{Agradecimentos}}
+%\addto\captionsportuguese{\renewcommand{\listtablename}{Lista de Figuras}}
+%\addto\captionsportuguese{\renewcommand{\listfigurename}{Lista de Tabelas}}
+\addto\captionsportuguese{\renewcommand{\nomname}{Lista de S\'{i}mbolos}} % Nomenclatura
+%\addto\captionsportuguese{\renewcommand{\appendixname}{Anexo}} % Apendice
+%\addto\captionsportuguese{\renewcommand{\bibname}{Refer\^{e}ncias}} % Bibliografia
+
+
+% ----------------------------------------------------------------------
+% Define default and cover page fonts.
+% ----------------------------------------------------------------------
+
+% Use Arial font as default
+%
+\renewcommand{\rmdefault}{phv}
+\renewcommand{\sfdefault}{phv}
+
+% Define cover page fonts
+%         encoding     family       series      shape
+%  \usefont{T1}     {phv}=helvetica  {b}=bold    {n}=normal
+%                   {ptm}=times      {m}=normal  {sl}=slanted
+%                                                {it}=italic
+% see more examples at
+% http://julien.coron.free.fr/languages/latex/fonts/
+%
+\def\FontLn{% 16 pt normal
+  \usefont{T1}{phv}{m}{n}\fontsize{16pt}{16pt}\selectfont}
+\def\FontLb{% 16 pt bold
+  \usefont{T1}{phv}{b}{n}\fontsize{16pt}{16pt}\selectfont}
+\def\FontMn{% 14 pt normal
+  \usefont{T1}{phv}{m}{n}\fontsize{14pt}{14pt}\selectfont}
+\def\FontMb{% 14 pt bold
+  \usefont{T1}{phv}{b}{n}\fontsize{14pt}{14pt}\selectfont}
+\def\FontSn{% 12 pt normal
+  \usefont{T1}{phv}{m}{n}\fontsize{12pt}{12pt}\selectfont}
+
+% Define page margins and line spacing.
+% set the page margins (2.5cm minimum in every side, as per IST rules)
+\usepackage{geometry}
+\geometry{verbose,tmargin=2.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+
+% Set space between lines.
+% allow setting line spacing (line spacing of 1.5, as per IST rules)
+\usepackage{setspace}
+\renewcommand{\baselinestretch}{1.5}
+
+
+% ----------------------------------------------------------------------
+% Include external packages.
+\usepackage{graphicx}
+
+% Include acronyms
+\usepackage{acronym}
+
+% Mathematical enhancements for LaTeX.
+\usepackage{amsmath}  % AMS mathematical facilities for LaTeX.
+\usepackage{amsthm}   % Typesetting theorems (AMS style).
+\usepackage{amsfonts} %
+
+
+
+% 'subfigure' package
+%
+% Deprecated: Figures divided into subfigures.
+% http://www.ctan.org/tex-archive/obsolete/macros/latex/contrib/subfigure/
+%
+% > subcaptions for subfigures
+%
+\usepackage{subfigure}
+
+
+% 'subfigmat' package
+%
+% Automates layout when using the subfigure package.
+% http://www.ctan.org/tex-archive/macros/latex/contrib/subfigmat/
+%
+% > matrices of similar subfigures
+%
+\usepackage{subfigmat}
+
+
+% 'url' package
+%
+% Verbatim with URL-sensitive line breaks.
+% http://www.ctan.org/tex-archive/macros/latex/contrib/url/
+%
+% > URLs in BibTex
+%
+% \usepackage{url}
+
+
+% 'rotating' package
+%
+% Rotation tools, including rotated full-page floats.
+% http://www.ctan.org/tex-archive/macros/latex/contrib/rotating/
+%
+% > show wide figures and tables in landscape format:
+%   use \begin{sidewaystable} and \begin{sidewaysfigure}
+%   instead of 'table' and 'figure', respectively.
+%
+\usepackage{rotating}
+
+
+% 'hyperref' package
+%
+% Extensive support for hypertext in LaTeX.
+% http://www.ctan.org/tex-archive/macros/latex/contrib/hyperref/
+%
+% > Extends the functionality of all the LATEX cross-referencing
+%   commands (including the table of contents, bibliographies etc) to
+%   produce \special commands which a driver can turn into hypertext
+%   links; Also provides new commands to allow the user to write adhoc
+%   hypertext links, including those to external documents and URLs.
+%
+\usepackage[pdftex]{hyperref}              % enhance documents that are to be output as HTML and PDF
+\hypersetup{colorlinks,                    % color text of links and anchors, eliminates borders around links
+            % linkcolor=red,               % color for normal internal links
+            linkcolor=black,               % color for normal internal links
+            anchorcolor=black,             % color for anchor text
+            % citecolor=green,             % color for bibliographical citations
+            citecolor=black,               % color for bibliographical citations
+            % filecolor=magenta,           % color for URLs which open local files
+            filecolor=black,               % color for URLs which open local files
+            % menucolor=red,               % color for Acrobat menu items
+            menucolor=black,               % color for Acrobat menu items
+            % urlcolor=cyan,               % color for linked URLs
+            urlcolor=black,                % color for linked URLs
+            % bookmarks=true,              % create PDF bookmarks (by default is true)
+	        bookmarksopen=false,           % don't expand bookmarks
+	        bookmarksnumbered=true,        % number bookmarks
+	        pdftitle={Thesis},             % TODO Change to your thesis title
+            pdfauthor={TODO},              % TODO Change to your name
+            pdfsubject={TODO },            % TODO Change to your thesis subject
+            pdfkeywords={TODO },           % TODO Change to thesis keywords
+            pdfstartview=FitV,
+            pdfdisplaydoctitle=true}
+
+
+% 'hypcap' package
+%
+% Adjusting the anchors of captions.
+% http://www.ctan.org/tex-archive/macros/latex/contrib/oberdiek/
+%
+% > fixes the problem with hyperref, that links to floats points
+%   below the caption and not at the beginning of the float.
+%
+\usepackage[figure,table]{hypcap}
+
+% ----------------------------------------------------------------------
+% Define new commands to assure consistent treatment throughout document
+% ----------------------------------------------------------------------
+\newcommand{\degree}{\ensuremath{^\circ\,}} % degrees
