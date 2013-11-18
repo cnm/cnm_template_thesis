@@ -27,10 +27,10 @@ We cannot thank him enough for his work and by the publishing of this template. 
 Instructions
 ------------
 
-    * Just do  "make" and check if Thesis.pdf is created
-      - If any problem check the Recommended latex packages section)
-    * Then fill the Thesis_Preamble.tex file with the properties of your thesis.
-    * Alter the remaining Thesis_*.tex files (see structure section)
+    * Just do  "make" and check if thesis.pdf is created
+        - If any problem check the Recommended latex packages section)
+    * Then fill the preamble.tex file with the properties of your thesis.
+    * Alter the remaining .tex files (see structure section)
 
 Structure
 ---------
