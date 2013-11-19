@@ -38,29 +38,28 @@ Structure
 ::
 
     .
-    ├── abstract.tex         -->
-    ├── acknowledgements.tex -->
-    ├── acronyms.tex         -->
-    ├── appendix.tex         -->
-    ├── architecture.tex     -->
-    ├── conclusions.tex      -->
-    ├── evaluation.tex       -->
-    ├── Figures              -->
-    │   ├── frontImage.png   -->
-    │   └── logoCNM.png      -->
-    ├── frontCover.tex       -->
-    ├── implementation.tex   -->
-    ├── introduction.tex     -->
-    ├── Logo.pdf             -->
+    ├── abstract.tex         --> Tex for you to insert the abstract
+    ├── acknowledgements.tex --> Tex for you to insert the acknowledgements
+    ├── acronyms.tex         --> Tex for you to insert the acronyms (you can put all you want, only used will be shown)
+    ├── appendix.tex         --> Tex for you to insert the appendix (optional)
+    ├── architecture.tex     --> Tex for you to insert the architecture chapter
+    ├── conclusions.tex      --> Tex for you to insert the conclusion chapter
+    ├── evaluation.tex       --> Tex for you to insert the evaluation chapter
+    ├── Figures              --> Figures Folder. Insert your images here
+    │   ├── frontImage.png   --> Image to show on the front cover (optional use but change to what you want)
+    │   └── logoCNM.png      --> Example image
+    ├── frontCover.tex       --> Tex for you to define the front cover
+    ├── implementation.tex   --> Tex for you to insert the implementation chapter
+    ├── introduction.tex     --> Tex for you to insert the introduction chapter
+    ├── Logo.pdf             --> Ist new logo image (do not change)
     ├── Makefile             -->
-    ├── preamble.tex         -->
+    ├── preamble.tex         --> Tex for you to insert the preamble configuration (probably do not need to change)
     ├── README.rst           -->
-    ├── references.bib       -->
-    ├── relatedwork.tex      -->
-    ├── resumo.tex           -->
-    ├── splncs.bst           -->
-    ├── thesis.pdf           -->
-    └── thesis.tex           -->
+    ├── references.bib       --> Insert the bibtex references here
+    ├── relatedwork.tex      --> Tex for you to insert the relatex work chapter
+    ├── resumo.tex           --> Tex for you to insert the abstract in portuguese
+    ├── splncs.bst           --> splncs reference style
+    └── thesis.tex           --> Main .tex file. Includes (\input) all other .tex files
 
 4 directories, 64 files
 
