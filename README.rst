@@ -8,7 +8,7 @@ For up-to-date regulations, please refer to:
 
 ::
 
-    http://cd.ist.utl.pt/files/publico/academicos/guia_dissertacao.pdf
+    http://da.ist.utl.pt/files/sites/33/TeseMstGuiaEstilo.pdf
     http://da.ist.utl.pt/dissertacao-de-mestrado/
 
 
