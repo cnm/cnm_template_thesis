@@ -72,3 +72,10 @@ Recommended latex packages
     texlive-latex-extra
     texlive-latex-science
     texlive-lang-portuguese
+
+Recommendations
+---------------
+
+An easy way to do tables for the latex newbie is to use this site:
+
+    * http://truben.no/latex/table/
